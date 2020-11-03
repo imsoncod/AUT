@@ -21,7 +21,13 @@ window.onload = function(){
 
 $(function(){
 	$('.answer').click(function(){
+		if(pos>=9){
+			pos = 0;
+			location.href = 'result.html';
+			return;
+		}
 		pos = (pos + 1) % len // 장면 선택
 		target.style.marginLeft = `${-pos * 100}%`
+		document.getElementById('progress').value = pos;
 	})
 });
