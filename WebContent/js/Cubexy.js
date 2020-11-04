@@ -215,6 +215,8 @@ function makeItemCnt(min, max) {
 	return Math.floor(Math.random() * (max - min)) + min;
 }
 
+var img_width, img_height;
+
 $.fn.extend({Cubexy: function(opciones) {
 					var Cubexy=this;
 					var id=$(Cubexy).attr('id');
@@ -246,10 +248,10 @@ $.fn.extend({Cubexy: function(opciones) {
 					var cssParteUnica=opciones.cssParteUnica;
 					var cssColorPicker=opciones.cssColorPicker;
 					
-		 var Estilos='<style>#'+cssColorPicker+' { text-align: left;    margin-left: -12px;}#'+cssColorPicker+' li { display: inline-table;width: 20px;height: 20px;margin: 2px;width: 20px;height: 20px; cursor: pointer;}.'+cssParteUnica+'{border: #000000 2px outset;}</style>';
+		 var Estilos='<style>#'+cssColorPicker+' { text-align: left;}#'+cssColorPicker+' li { display: inline-table;width: 20px;height: 20px;margin: 2px;width: 20px;height: 20px; cursor: pointer;}.'+cssParteUnica+'{border: #000000 2px outset;}</style>';
 		 if(cssDefault){ $('body').before(Estilos); }
 		 
-         $('#'+idInputColor).before('<canvas style="display:none" id="tmpCanvas" width="300" height="300"></canvas>');   
+         $('#'+idInputColor).before('<canvas style="display:none" id="tmpCanvas"></canvas>');   
          var canvas = document.getElementById(CanvasSalida);
          var ctx = canvas.getContext("2d");
 		 ctx.clearRect(0, 0, ctx.width, ctx.height);
@@ -293,7 +295,9 @@ $.fn.extend({Cubexy: function(opciones) {
                      }
                      base_image[cimgContext].enabled=true;
                     
-                     base_image[cimgContext].onload = function(){ctx.drawImage(this,0,0);}
+                     base_image[cimgContext].onload = function(){	
+                    	 ctx.drawImage(this,0,0,img_width,img_height);
+                     }
                      cimgContext++;
                   }
                 });

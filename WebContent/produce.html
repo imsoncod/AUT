@@ -19,6 +19,10 @@
 
 <body oncontextmenu="return false" onkeydown="return false">
 <div class = "root">
+	<h1 style="margin-top: 10%; margin-bottom: 10%;">
+		캐릭터 랜덤 생성기
+	</h1>
+
 	<div class = "wrapper">
 	
 	<canvas id="canvas">Canvas is not support</canvas>
@@ -27,22 +31,22 @@
 
 		function fitToContainer(canvas){
   			canvas.style.width='100%';
-  			canvas.style.height='80%';
   			canvas.width  = canvas.offsetWidth;
-  			canvas.height = canvas.offsetHeight;
-		} 
-
+  			img_width = canvas.offsetWidth;
+  			canvas.height = canvas.offsetWidth;
+  			img_height = canvas.offsetWidth;
+		}
 		fitToContainer(canvas); 
 	</script> 
 
     <div class="panel panel-success" align=center>
         <div class="panel-body">
 			<div id="avatar" >                          
-  						<div id="FONDO" align=left >            
+  						<div id="FONDO" align="center" >            
                     		  <img class="img-thumbnail" src="./Items/BG/BackGround.png"/>
 						</div>
                           
-                          <div id="COLOR" align=left>
+                          <div id="COLOR" align="center">
                               
                               <img class="img-thumbnail" src="./Items/COLOR/BASE.png"/>
                               <img class="img-thumbnail" src="./Items/COLOR/BLACK.png"/>
@@ -59,7 +63,7 @@
                               <img class="img-thumbnail" src="./Items/COLOR/YELLOW.png"/>
                              
                          </div>
-                              <div id="HATS" align=left >
+                              <div id="HATS" align=center >
                                 
                               <img class="img-thumbnail" src="./Items/BG/BackGround.png"/>
                               <img class="img-thumbnail" src="./Items/HATS/ALIEN.png"/>
@@ -187,7 +191,7 @@
                            
                             </div>
 
-                          <div id="COSTUME" align=left>
+                          <div id="BODY" align=center>
                              
                               <img class="img-thumbnail" src="./Items/BG/BackGround.png"/>
                               <img class="img-thumbnail" src="./Items/BODY/ASTRO.png"/>
@@ -221,7 +225,7 @@
                           
                           </div>
   
-                              <div id="PET" align=left >
+                              <div id="PETS" align=center>
                                   
                               <img class="img-thumbnail" src="./Items/BG/BackGround.png"/>
                               <img class="img-thumbnail" src="./Items/PETS/ROBOT.png"/>
@@ -254,6 +258,11 @@
                </div>
           </div>
       </div>
+      
+    <div class = "bot">
+		<input type = "button" value = "한 번 더!"/>
+	</div>
+      
   </div>                    
                       
   <script>

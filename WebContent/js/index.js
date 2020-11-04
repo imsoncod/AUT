@@ -28,6 +28,6 @@ $(function(){
 		}
 		pos = (pos + 1) % len // 장면 선택
 		target.style.marginLeft = `${-pos * 100}%`
-		document.getElementById('progress').value = pos;
+		document.getElementById('progress').value = pos+1;
 	})
 });
