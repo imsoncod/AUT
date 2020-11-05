@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- font -->
+<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+<script>
+  WebFont.load({
+    google: {
+      families: ['Jua']
+    }
+  });
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<title>AUT : 어몽어스 테스트</title>
+<meta name = "author" content = "AUT">
+<meta name = "keywords" content = "어몽어스, 어몽어스 테스트, 어몽어스 캐릭터, AUT, AmongUs, AmongUs Test">
+<meta name = "description" content = "내가 어몽어스 캐릭터라면?">
+<link rel="canonical" href = "https://amongustest.site">
+
+<meta property="og:url" content="https://amongustest.site"/>
+<meta property="og:title" content="AUT : 어몽어스 테스트" />
+<meta property="og:description" content="내가 어몽어스 캐릭터라면?" />
+<meta property="og:image" content="og.png" />
+<!-- favicon -->
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="icon" href="favicon.ico" >
+</head>
+<script src="//code.jquery.com/jquery.min.js"></script>
+
+<style>
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Jua', sans-serif;
+}
+
+html,body {
+  height: 100%;
+  text-align: center;
+}
+
+h1{
+	font-size: 30px;
+  	font-stretch: normal;
+  	line-height: 1.6;
+  	margin-top: 10%;
+  	margin-bottom: 10px;
+}
+
+input{
+	background-color: #000;
+	border-radius: 15px;
+  	border: none;
+  	color: white;
+  	padding: 15px 32px;
+  	margin-top: 20px;
+  	text-decoration: none;
+	width: 80%;
+	font-size: 20px;
+	cursor: pointer;
+}
+</style>
+
+<script>
+
+$(document).ready(function(){
+
+	var drawCanvas = document.getElementById('drawCanvas');
+
+	var drawBackup = new Array();
+
+	if (typeof drawCanvas.getContext == 'function') {
+
+		var ctx = drawCanvas.getContext('2d');
+
+		var isDraw = false;
+
+		var width = $('#width').val();;
+
+		var color = $('#color').val();
+
+		var pDraw = $('#drawCanvas').offset();
+
+		var currP = null;
+
+
+
+		// Event (마우스)
+
+		$('#drawCanvas').bind('mousedown', function(e) {
+
+			if (e.button===0) {
+
+				saveCanvas();
+
+				e.preventDefault();
+
+				ctx.beginPath();
+
+				isDraw = true;
+
+			}
+
+		});
+
+		$('#drawCanvas').bind('mousemove', function(e) {
+
+			var event = e.originalEvent;
+
+			e.preventDefault();
+
+			currP = { X:event.offsetX, Y:event.offsetY };
+
+			if(isDraw) draw_line(currP);
+
+		});
+
+		$('#drawCanvas').bind('mouseup', function(e) {
+
+			e.preventDefault();
+
+			isDraw = false;
+
+		});
+
+		$('#drawCanvas').bind('mouseleave', function(e) {
+
+			isDraw = false;
+
+		});
+
+
+
+		// Event (터치스크린)
+
+		$('#drawCanvas').bind('touchstart', function(e) {
+
+			saveCanvas();
+
+			e.preventDefault();
+
+			ctx.beginPath();
+
+		});
+
+		$('#drawCanvas').bind('touchmove', function(e) {
+
+			var event = e.originalEvent;
+
+			e.preventDefault();
+
+			currP = { X:event.touches[0].pageX-drawCanvas.offsetLeft, Y:event.touches[0].pageY-drawCanvas.offsetTop };
+			
+			draw_line(currP);
+
+		});
+
+		$('#drawCanvas').bind('touchend', function(e) {
+
+			e.preventDefault();
+
+		});
+
+
+
+		// 선 그리기
+
+		function draw_line(p) {
+
+			ctx.lineWidth = width;
+
+			ctx.lineCap = 'round';
+
+			ctx.lineTo(p.X, p.Y);
+
+			ctx.moveTo(p.X, p.Y);
+
+			ctx.strokeStyle = color;
+
+			ctx.stroke();
+
+		}
+
+		function saveCanvas() {
+
+			drawBackup.push(ctx.getImageData(0, 0, drawCanvas.width, drawCanvas.height));
+
+		}
+
+	}
+
+});
+
+window.onload = function(){
+	$('#drawCanvas').attr('width',$('#sign').width());
+	$('#drawCanvas').attr('height',$('#sign').width());
+}
+
+</script>
+
+<body oncontextmenu="return false" onkeydown="return false">
+<div style="width:100%; height:100%; max-width: 600px; text-align: center; display: inline-block;">
+	<div style = "display: inline-block;">
+		<h1>
+			어몽어스 캐릭터를 그려주세요
+		</h1>
+	</div>
+
+	<div id = "sign" align="center" style="width: 90%; height:auto; max-width: 600px; display: inline-block;">
+
+		<canvas id="drawCanvas" width="320" height="320" style="border:1px solid #000000;">Canvas not supported</canvas>
+
+		<input type = "button" value = "결과 확인" onclick="location.href='result.html'">
+		
+	</div>
+</div>
+</body>
+</html>
