@@ -29,6 +29,8 @@ body {
 
   margin: auto !important;
   background: white;
+
+  overflow: auto;
 }
 
 .root {
