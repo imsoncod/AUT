@@ -29,8 +29,6 @@ body {
 
   margin: auto !important;
   background: white;
-
-  overflow: hidden;
 }
 
 .root {
@@ -59,7 +57,7 @@ body {
   z-index: 0;
   height: auto;
   max-width: 600px;
-  max-height: 600px;
+  max-height: auto;
 }
 
 .top{
@@ -95,7 +93,10 @@ body {
 }
 
 .bot{
+	display: inline-block;
+	margin-top: 20px;
 	width : 100%;
+	height: auto;
 }
 
 .bot input{
@@ -145,4 +146,11 @@ body {
 	cursor: pointer;
 	white-space: normal;
 	word-wrap: break-word;
+}
+
+.ad{
+	display: inline-block;
+	width: 90%;
+	height: auto;
+	margin-top: 30px;
 }
