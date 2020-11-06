@@ -27,6 +27,7 @@ $(function(){
 		}
 		page = (page + 1) % len // 장면 선택
 		target.style.marginLeft = `${-page * 100}%`
-		document.getElementById('progress').value = page+1;
+		$('#progress_bar').css('width',String((page+1)*10) + '%');
+		$('#progress_bar').text(page+1 + '/10');
 	})
 });

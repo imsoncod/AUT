@@ -29,10 +29,11 @@
 <!-- favicon -->
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="icon" href="favicon.ico" >
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <style>
-  *{margin:0;padding:0;}
+ h1{font-family: 'Jua', sans-serif;}
   ul,li{list-style:none;}
   .slide{height:150px;overflow:hidden;}
   .slide ul{height:100%;}
@@ -43,9 +44,11 @@
 
 <div class = "root">
 	<div class = "wrapper">
-	
+		
 		<div class = "top">
-			<progress id = "progress" value = "1" max = "10"></progress>
+			<div class="w3-light-grey w3-round-large" style="margin-top: 10%; width: 80%; display: inline-block;">
+    			<div class="w3-container w3-blue w3-round-large" id = "progress_bar" style="width:10%">1/10</div>
+  			</div>
 		</div>
 		
 		<div class = "mid">
@@ -53,93 +56,93 @@
 				<ul>
     				<li class = "question" id = "q1">
     					<h1>
-    						질문1
+    						조립식 침대를 구입했다
     					</h1>
     						<br>
-    					<input class = "answer" type = "button" value = "대답1"/>
+    					<input class = "answer" type = "button" value = "설명서를 보지않고 일단 조립을 시작한다"/>
 							<br>
-						<input class = "answer" type = "button" value = "대답2"/>	
+						<input class = "answer" type = "button" value = "설명서를 정독하고 조립을 시작한다"/>	
     				</li>
     				<li class = "question" id = "q2">
     					<h1>
-    						질문2
+    						청바지를 주문했는데 사이즈가 조금 크다
     					</h1>
     						<br>
-    					<input class = "answer" type = "button" value = "대답1"/>
+    					<input class = "answer" type = "button" value = "그냥 입는다"/>
 							<br>
-						<input class = "answer" type = "button" value = "대답2"/>	
+						<input class = "answer" type = "button" value = "교환요청을 한다"/>	
     				</li>
     				<li class = "question" id = "q3">
     					<h1>
-    						질문3
+    						시험지를 받았는데 한 문제도 모르겠다
     					</h1>
     						<br>
-    					<input class = "answer" type = "button" value = "대답1"/>
+    					<input class = "answer" type = "button" value = "무슨 수를 써서라도 풀어낸다"/>
 							<br>
-						<input class = "answer" type = "button" value = "대답2"/>	
+						<input class = "answer" type = "button" value = "잔다 or 제출하고 나간다"/>	
     				</li>
     				<li class = "question" id = "q4">
     					<h1>
-    						질문4
+    						10년만에 동창회를 가게되었다
     					</h1>
     						<br>
-    					<input class = "answer" type = "button" value = "대답1"/>
+    					<input class = "answer" type = "button" value = "약속 시간에 맞추어 간다"/>
 							<br>
-						<input class = "answer" type = "button" value = "대답2"/>	
+						<input class = "answer" type = "button" value = "약속 시간보다 약간 늦게 간다"/>	
     				</li>
     				<li class = "question" id = "q5">
     					<h1>
-    						질문5
+    						눈 앞에 지갑이 떨어져있다
     					</h1>
     						<br>
-    					<input class = "answer" type = "button" value = "대답1"/>
+    					<input class = "answer" type = "button" value = "자연스럽게 줍는다"/>
 							<br>
-						<input class = "answer" type = "button" value = "대답2"/>	
+						<input class = "answer" type = "button" value = "지나친다"/>	
     				</li>
     				<li class = "question" id = "q6">
     					<h1>
-    						질문6
+    						횡단보도에서 사람이 넘어졌다
     					</h1>
     						<br>
-    					<input class = "answer" type = "button" value = "대답1"/>
+    					<input class = "answer" type = "button" value = "달려가서 도와준다"/>
 							<br>
-						<input class = "answer" type = "button" value = "대답2"/>	
+						<input class = "answer" type = "button" value = "마음으로는 걱정하지만 도와주지는 않는다"/>	
     				</li>
     				<li class = "question" id = "q7">
     					<h1>
-    						질문7
+    						선생님이 모두 눈을 감으라고 한다
     					</h1>
     						<br>
-    					<input class = "answer" type = "button" value = "대답1"/>
+    					<input class = "answer" type = "button" value = "눈을 감는다"/>
 							<br>
-						<input class = "answer" type = "button" value = "대답2"/>	
+						<input class = "answer" type = "button" value = "선생님은 눈을 감았는지 확인한다"/>	
     				</li>
     				<li class = "question" id = "q8">
     					<h1>
-    						질문8
+    						친구가 나 때문에 오해를 받아 혼나고 있다
     					</h1>
     						<br>
-    					<input class = "answer" type = "button" value = "대답1"/>
+    					<input class = "answer" type = "button" value = "친구는 잘못이 없다고 솔직하게 말한다"/>
 							<br>
-						<input class = "answer" type = "button" value = "대답2"/>	
+						<input class = "answer" type = "button" value = "나중에 친구에게 따로 미안하다고 한다"/>	
     				</li>
     				<li class = "question" id = "q9">
     					<h1>
-    						질문9
+    						밤에 어두운 길을 걷는데 계속 따라오는 사람이 있다
     					</h1>
     						<br>
-    					<input class = "answer" type = "button" value = "대답1"/>
+    					<input class = "answer" type = "button" value = "걸음을 멈추고 뒤돌아본다"/>
 							<br>
-						<input class = "answer" type = "button" value = "대답2"/>	
+						<input class = "answer" type = "button" value = "사람이 많은 곳으로 뛰어간다"/>	
     				</li>
     				<li class = "question" id = "q10">
     					<h1>
-    						질문10
+    						친구들과 탕수육을 먹으려 한다
     					</h1>
     						<br>
-    					<input class = "answer" type = "button" value = "대답1"/>
+    					<input class = "answer" type = "button" value = "부먹 찍먹 투표를 한다"/>
 							<br>
-						<input class = "answer" type = "button" value = "대답2"/>	
+						<input class = "answer" type = "button" value = "일단 소스를 붓고 미안하다고 한다"/>	
     				</li>
   				</ul>
 			</div>

@@ -24,6 +24,7 @@
 <meta property="og:image" content="og.png" />
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/Cubexy.js"></script>
+<script src="js/result.js"></script>
 <link rel="stylesheet" href="css/index.css">
 <!-- favicon -->
 <link rel="shortcut icon" href="favicon.ico">
@@ -32,9 +33,11 @@
 
 <body oncontextmenu="return false" onkeydown="return false">
 <div class = "root">
-	<h1 id = "WhoRU" style="margin-top: 10%; margin-bottom: 5%;">
-		당신은 크루원 입니다
-	</h1>
+	<div id = "result_wrapper" style="margin-top: 10%; margin-bottom: 5%; font-size: 30px;">
+		당신은
+		<span id="result" style="color: blue"></span>
+		입니다
+	</div>
 
 	<div class = "wrapper">
 	
