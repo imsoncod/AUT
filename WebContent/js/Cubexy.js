@@ -286,21 +286,36 @@ $.fn.extend({Cubexy: function(opciones) {
                      switch(cimgContext){
                      case 1:
                     	 base_image[cimgContext].src = "Items/COLOR/" + color;
+                         base_image[cimgContext].enabled=true;
+                         
+                         base_image[cimgContext].onload = function(){	
+                        	 ctx.drawImage(this,0,0,img_width,img_height);
+                         }
                     	 break;
                      case 2:
                     	 base_image[cimgContext].src = "Items/HATS/" + hat;
+                         base_image[cimgContext].enabled=true;
+                         
+                         base_image[cimgContext].onload = function(){	
+                        	 ctx.drawImage(this,0,0,img_width,img_height);
+                         }
                     	 break;
                      case 3:
                     	 base_image[cimgContext].src = "Items/BODY/" + body;
+                         base_image[cimgContext].enabled=true;
+                         
+                         base_image[cimgContext].onload = function(){	
+                        	 ctx.drawImage(this,0,0,img_width,img_height);
+                         }
                     	 break;
                      case 4:
                     	 base_image[cimgContext].src = "Items/PETS/" + pet;
+                         base_image[cimgContext].enabled=true;
+                         
+                         base_image[cimgContext].onload = function(){	
+                        	 ctx.drawImage(this,0,0,img_width,img_height);
+                         }
                     	 break;
-                     }
-                     base_image[cimgContext].enabled=true;
-                    
-                     base_image[cimgContext].onload = function(){	
-                    	 ctx.drawImage(this,0,0,img_width,img_height);
                      }
                      cimgContext++;
                   }
