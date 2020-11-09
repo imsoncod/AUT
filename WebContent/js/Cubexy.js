@@ -274,8 +274,34 @@ $.fn.extend({Cubexy: function(opciones) {
    		 	ctx.clearRect(0, 0, canvas.width, canvas.height);
    		 
             makeItem();
-            IniciarPintadoAvatar(colorArray[color], hatArray[hat], bodyArray[body], petArray[pet]);    
-             
+            //IniciarPintadoAvatar(colorArray[color], hatArray[hat], bodyArray[body], petArray[pet]); 
+            
+            var idx = 1;
+            base_image[idx] = new Image();           
+            base_image[idx].src = "Items/COLOR/" + colorArray[color];
+            base_image[idx].onload = function(){
+            	ctx.drawImage(base_image[idx],0,0,img_width,img_height);
+            	idx++;
+            	base_image[idx] = new Image();  
+            	base_image[idx].src = "Items/HATS/" + hatArray[hat];
+            	base_image[idx].onload = function(){
+            		ctx.drawImage(base_image[idx],0,0,img_width,img_height);
+            		idx++;
+            		base_image[idx] = new Image();  
+            		base_image[idx].src = "Items/BODY/" + bodyArray[body];
+                	base_image[idx].onload = function(){
+                		ctx.drawImage(base_image[idx],0,0,img_width,img_height);
+                		idx++;
+                		base_image[idx] = new Image();
+                		base_image[idx].src = "Items/PETS/" + petArray[pet];
+                    	base_image[idx].onload = function(){
+                    		ctx.drawImage(base_image[idx],0,0,img_width,img_height);
+                    	}
+                	}
+            	}
+            }
+            
+            /*
             function IniciarPintadoAvatar(color, hat, body, pet){
             cimgContext=1;
             $('#' + id + ' > div').each(function () {
@@ -323,5 +349,6 @@ $.fn.extend({Cubexy: function(opciones) {
             });
 
           }
+          */
 	}
 });
