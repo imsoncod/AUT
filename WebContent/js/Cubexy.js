@@ -280,22 +280,22 @@ $.fn.extend({Cubexy: function(opciones) {
             base_image[idx] = new Image();           
             base_image[idx].src = "Items/COLOR/" + colorArray[color];
             base_image[idx].onload = function(){
+            	ctx.drawImage(base_image[idx],0,0,img_width,img_height);
             	idx++;
             	base_image[idx] = new Image();  
             	base_image[idx].src = "Items/HATS/" + hatArray[hat];
             	base_image[idx].onload = function(){
+            		ctx.drawImage(base_image[idx],0,0,img_width,img_height);
             		idx++;
             		base_image[idx] = new Image();  
             		base_image[idx].src = "Items/BODY/" + bodyArray[body];
                 	base_image[idx].onload = function(){
+                		ctx.drawImage(base_image[idx],0,0,img_width,img_height);
                 		idx++;
                 		base_image[idx] = new Image();
                 		base_image[idx].src = "Items/PETS/" + petArray[pet];
                     	base_image[idx].onload = function(){
-                    		ctx.drawImage(base_image[1],0,0,img_width,img_height);
-                    		ctx.drawImage(base_image[2],0,0,img_width,img_height);
-                    		ctx.drawImage(base_image[3],0,0,img_width,img_height);
-                    		ctx.drawImage(base_image[4],0,0,img_width,img_height);
+                    		ctx.drawImage(base_image[idx],0,0,img_width,img_height);
                     	}
                 	}
             	}
