@@ -269,6 +269,10 @@ $.fn.extend({Cubexy: function(opciones) {
                 });
             });
             
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext("2d");
+   		 	ctx.clearRect(0, 0, canvas.width, canvas.height);
+   		 
             makeItem();
             IniciarPintadoAvatar(colorArray[color], hatArray[hat], bodyArray[body], petArray[pet]);    
              
