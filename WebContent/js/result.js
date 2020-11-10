@@ -9,6 +9,7 @@ window.onload = function(){
 		$('#result').css('color', 'red');
 	}
 	$('#result').text(sub[sub_idx] + ' ' + main[main_idx]);
+	$('#loading').hide();
 }
 
 function makeCnt(min, max) {

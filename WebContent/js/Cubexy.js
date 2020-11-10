@@ -1,3 +1,7 @@
+window.onload = function(){
+	$('#loading').hide();
+}
+
 var colorArray = [
 	"BASE.png",
 	"BLACK.png",
