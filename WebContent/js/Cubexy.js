@@ -282,22 +282,22 @@ $.fn.extend({Cubexy: function(opciones) {
             
             var idx = 1;
             base_image[idx] = new Image();           
-            base_image[idx].src = "Items/COLOR/" + colorArray[color];
+            base_image[idx].src = "https://raw.githubusercontent.com/imsoncod/AUT_Storage/master/COLOR/" + colorArray[color];
             base_image[idx].onload = function(){
             	ctx.drawImage(base_image[idx],0,0,img_width,img_height);
             	idx++;
             	base_image[idx] = new Image();  
-            	base_image[idx].src = "Items/HATS/" + hatArray[hat];
+            	base_image[idx].src = "https://raw.githubusercontent.com/imsoncod/AUT_Storage/master/HATS/" + hatArray[hat];
             	base_image[idx].onload = function(){
             		ctx.drawImage(base_image[idx],0,0,img_width,img_height);
             		idx++;
             		base_image[idx] = new Image();  
-            		base_image[idx].src = "Items/BODY/" + bodyArray[body];
+            		base_image[idx].src = "https://raw.githubusercontent.com/imsoncod/AUT_Storage/master/BODY/" + bodyArray[body];
                 	base_image[idx].onload = function(){
                 		ctx.drawImage(base_image[idx],0,0,img_width,img_height);
                 		idx++;
                 		base_image[idx] = new Image();
-                		base_image[idx].src = "Items/PETS/" + petArray[pet];
+                		base_image[idx].src = "https://raw.githubusercontent.com/imsoncod/AUT_Storage/master/PETS/" + petArray[pet];
                     	base_image[idx].onload = function(){
                     		ctx.drawImage(base_image[idx],0,0,img_width,img_height);
                     	}
